@@ -1,42 +1,50 @@
 [
   {
-    "naziv": "Ja kuvam krek",
-    "izvodjac": "23",
-    "ocena": 2,
-    "zanr": "rep",
-    "datum": "2025-08-27T19:07:31.319814",
-    "favorit": true
-  },
-  {
-    "naziv": "Love story",
-    "izvodjac": "Taylor Swift",
+    "naziv": "Slipping Through My Fingers",
+    "izvodjac": "ABBA",
     "ocena": 5,
     "zanr": "Pop",
-    "datum": "2025-08-27T19:07:53.013858",
-    "favorit": true
-  },
-  {
-    "naziv": "adnksf",
-    "izvodjac": "sdsd",
-    "ocena": 3,
-    "zanr": "rep",
-    "datum": "2025-08-27T19:11:48.050659",
-    "favorit": true
-  },
-  {
-    "naziv": "Piano man",
-    "izvodjac": "Billy Idol",
-    "ocena": 5,
-    "zanr": "BMK",
-    "datum": "2025-08-27T19:18:59.503479",
+    "datum": "2025-08-27T18:27:06.313143",
     "favorit": false
   },
   {
-    "naziv": "aaaa",
-    "izvodjac": "ssddd",
+    "naziv": "Lonely Day",
+    "izvodjac": "System of a Dawn",
+    "ocena": 4,
+    "zanr": "Metal",
+    "datum": "2025-08-27T18:27:50.319212",
+    "favorit": false
+  },
+  {
+    "naziv": "Olivera",
+    "izvodjac": "\u0110or\u0111e Bala\u0161evi\u0107",
     "ocena": 3,
-    "zanr": "ws",
-    "datum": "2025-08-27T19:21:33.373015",
+    "zanr": "Balada",
+    "datum": "2025-08-27T18:28:46.711430",
+    "favorit": false
+  },
+  {
+    "naziv": "Houdini",
+    "izvodjac": "Eminem",
+    "ocena": 1,
+    "zanr": "Rap",
+    "datum": "2025-08-27T18:29:49.254255",
+    "favorit": false
+  },
+  {
+    "naziv": "Chloe or Sam or Sophia or Marcus",
+    "izvodjac": "Taylor Swift",
+    "ocena": 5,
+    "zanr": "Pop",
+    "datum": "2025-08-27T18:30:56.996155",
+    "favorit": true
+  },
+  {
+    "naziv": "Whats the use",
+    "izvodjac": "Mac Miller",
+    "ocena": 5,
+    "zanr": "Hip-hop",
+    "datum": "2025-08-27T18:31:58.974204",
     "favorit": true
   }
 ]

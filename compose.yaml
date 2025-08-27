@@ -1,0 +1,35 @@
+name: Pesme
+version: "3.9"
+services:
+  app.py:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pesme-container
+    env_file:
+      - .env
+    ports:
+      - "3003:3000"       # host:container
+    networks:
+      - pesme-net
+    volumes:
+      - pesme-data:/app/data    # named volume za trajno čuvanje podataka
+      - ./templates:/app/templates
+      - ./static:/app/static
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  pesme-net:
+    driver: bridge
+volumes:
+  pesme-data:
