@@ -1,0 +1,42 @@
+[
+  {
+    "naziv": "Ja kuvam krek",
+    "izvodjac": "23",
+    "ocena": 2,
+    "zanr": "rep",
+    "datum": "2025-08-27T19:07:31.319814",
+    "favorit": true
+  },
+  {
+    "naziv": "Love story",
+    "izvodjac": "Taylor Swift",
+    "ocena": 5,
+    "zanr": "Pop",
+    "datum": "2025-08-27T19:07:53.013858",
+    "favorit": true
+  },
+  {
+    "naziv": "adnksf",
+    "izvodjac": "sdsd",
+    "ocena": 3,
+    "zanr": "rep",
+    "datum": "2025-08-27T19:11:48.050659",
+    "favorit": true
+  },
+  {
+    "naziv": "Piano man",
+    "izvodjac": "Billy Idol",
+    "ocena": 5,
+    "zanr": "BMK",
+    "datum": "2025-08-27T19:18:59.503479",
+    "favorit": false
+  },
+  {
+    "naziv": "aaaa",
+    "izvodjac": "ssddd",
+    "ocena": 3,
+    "zanr": "ws",
+    "datum": "2025-08-27T19:21:33.373015",
+    "favorit": true
+  }
+]

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baza pesama</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Baza pesama</h1>
+
+    <!-- Sortiranje -->
+    <form method="get" id="sortForm">
+        <label for="sort">Sortiraj po:</label>
+        <select name="sort" id="sort" onchange="document.getElementById('sortForm').submit()">
+            <option value="ocena" {% if current_sort == 'ocena' %}selected{% endif %}>Ocena (najveća prvo)</option>
+            <option value="zanr" {% if current_sort == 'zanr' %}selected{% endif %}>Žanr (A-Z)</option>
+        </select>
+    </form>
+
+    <!-- Lista pesama -->
+    <ul>
+        {% for pesma in pesme %}
+            <li>
+                <div>
+                    <strong>"{{ pesma.naziv }}"</strong> - {{ pesma.izvodjac }}<br>
+                    Ocena: {{ pesma.ocena }} | Žanr: {{ pesma.zanr }}<br>
+                    <small>{{ pesma.datum[:19] }}</small>
+                </div>
+                <button class="favorite-btn" data-naziv="{{ pesma.naziv }}">
+                    {% if pesma.favorit %}❤️{% else %}🤍{% endif %}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Dodavanje pesme -->
+    <h2>Dodaj novu pesmu</h2>
+    <form id="songForm">
+        <input type="text" name="naziv" placeholder="Naziv pesme" required>
+        <input type="text" name="izvodjac" placeholder="Izvođač" required>
+        <input type="number" name="ocena" placeholder="Ocena 1-5" min="1" max="5" required>
+        <input type="text" name="zanr" placeholder="Žanr" required>
+        <button type="submit">Dodaj pesmu</button>
+    </form>
+</div>
+
+<script>
+    // Dodavanje pesme
+    const form = document.getElementById('songForm');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const response = await fetch('/add', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
+        if (data.status === 'success') location.reload();
+        else alert(data.message);
+    });
+
+    // Toggle favorit
+    const favoriteButtons = document.querySelectorAll('.favorite-btn');
+    favoriteButtons.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const naziv = btn.dataset.naziv;
+            const formData = new FormData();
+            formData.append('naziv', naziv);
+
+            await fetch('/favorite', {
+                method: 'POST',
+                body: formData
+            });
+            location.reload();
+        });
+    });
+</script>
+</body>
+</html>
